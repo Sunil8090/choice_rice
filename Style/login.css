@@ -1,0 +1,207 @@
+body {
+    height: 100vh;
+    display: flex;
+    font-family: "Lato", sans-serif;
+    color: white;
+    background: rgba(194, 194, 194, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(194, 194, 194, 1) 0%, rgba(117, 117, 117, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(194, 194, 194, 1)), color-stop(100%, rgba(117, 117, 117, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(194, 194, 194, 1) 0%, rgba(117, 117, 117, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(194, 194, 194, 1) 0%, rgba(117, 117, 117, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(194, 194, 194, 1) 0%, rgba(117, 117, 117, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(194, 194, 194, 1) 0%, rgba(117, 117, 117, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c2c2c2', endColorstr='#757575', GradientType=1);
+}
+
+.wrapper {
+    width: 360px;
+    height: 600px;
+    margin: auto;
+    background-position: left;
+    background-size: cover;
+    background-image: url("https://d2jx2rerrg6sh3.cloudfront.net/image-handler/ts/20220701090847/ri/750/src/images/Article_Images/ImageForArticle_22765_16566809230809997.jpg");
+    border-radius: 4px;
+    transition: all 0.35s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper.move {
+    background-position: right;
+}
+
+.wrapper .login-section,
+.wrapper .signup-section {
+    width: 320px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.35s ease-in-out;
+}
+
+.wrapper .login-section>*,
+.wrapper .signup-section>* {
+    z-index: 1;
+}
+
+.wrapper .login-section:after,
+.wrapper .signup-section:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #3dafb1;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.wrapper .login-section .circle,
+.wrapper .signup-section .circle {
+    display: block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 8px 20px;
+}
+
+.wrapper .login-section .rectangle,
+.wrapper .signup-section .rectangle {
+    display: block;
+    height: 40px;
+    width: 200px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+}
+
+.wrapper .login-section .main-text,
+.wrapper .signup-section .main-text {
+    width: 100%;
+    height: 90px;
+    display: flex;
+}
+
+.wrapper .login-section .main-text .phrase,
+.wrapper .signup-section .main-text .phrase {
+    font-size: 32px;
+    font-weight: 900;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    transition: all 0.35s ease-in-out;
+    left: 0;
+    right: 0;
+    /* top: 360px; */
+    opacity: 0.7;
+}
+
+.wrapper .login-section .social-icons,
+.wrapper .signup-section .social-icons {
+    display: flex;
+}
+
+.wrapper .login-section .social-icons span,
+.wrapper .signup-section .social-icons span {
+    z-index: 1;
+}
+
+.wrapper .login-section.move {
+    left: -280px;
+}
+
+.wrapper .login-section.move .main-text #login {
+    opacity: 1;
+    left: 200px;
+    right: -75px;
+    top: 240px;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+.wrapper .signup-section {
+    left: 320px;
+}
+
+.wrapper .signup-section:after {
+    background-color: #554d81;
+}
+
+.wrapper .signup-section .main-text #signup {
+    opacity: 1;
+    right: 200px;
+    left: -80px;
+    top: 240px;
+    transform: rotate(90deg) scale(0.5);
+}
+
+.wrapper .signup-section.move {
+    left: 40px;
+}
+
+.wrapper .signup-section.move .main-text #signup {
+    opacity: 0.7;
+    left: 0;
+    right: 0;
+    top: 360px;
+    transform: rotate(0deg) scale(1);
+}
+
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    /* Place it behind other content */
+    filter: blur(10px);
+    /* Adjust the blur amount as needed */
+}
+
+.login-form,
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.login-form label,
+.signup-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.login-form input,
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button,
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3dafb1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
