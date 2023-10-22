@@ -1,13 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea maiores impedit aliquid possimus in voluptatibus quaerat illum omnis non laborum.
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&display=swap");
+    </style>
+    <link
+      rel="stylesheet"
+      href="./product.css"
+    />
+  </head>
+  <body>
+    <div id="search-div">
+      <h4>Products</h4>
+      <div id="search_helper">
+          <input placeholder="Search..." type="text">
+      </div>
     </div>
-</body>
+    <section id="main">
+      <div id="filters">
+        <div class="wrapper">
+          <header>
+            <h3 style="text-align: center">PRICE RANGE</h3>
+            <p>Use slider or Min and Max</p>
+          </header>
+          <div class="price-input">
+            <div class="feild">
+              <span>Min</span>
+              <input
+                type="number"
+                class="input-min"
+                id="input-min"
+                value="1000"
+              />
+            </div>
+            <div class="separator">-</div>
+            <div class="feild">
+              <span>Max</span>
+              <input
+                type="number"
+                class="input-max"
+                id="input-max"
+                value="2500"
+              />
+            </div>
+          </div>
+          <div class="slider">
+            <div class="progress"></div>
+          </div>
+          <div class="range-input">
+            <input
+              type="range"
+              class="range-min"
+              id="range-min"
+              min="0"
+              max="4000"
+              value="1000"
+              step="100"
+            />
+            <input
+              type="range"
+              class="range-max"
+              id="range-max"
+              min="0"
+              max="4000"
+              value="2500"
+              step="100"
+            />
+          </div>
+        </div>
+        <div class="brand">
+          <h3 style="text-align: center; margin-bottom: 9px">BRAND</h3>
+
+          <input
+            class="brand_radio"
+            type="radio"
+            id="dettol"
+            name="company"
+            value="dettol"
+          />
+          <label
+            class="label_radio"
+            for="dettol"
+            >&nbsp;Dettol</label
+          ><br />
+
+          <input
+            class="brand_radio"
+            type="radio"
+            id="savlon"
+            name="company"
+            value="savlon"
+          />
+          <label
+            class="label_radio"
+            for="savlon"
+            >&nbsp;Savlon</label
+          ><br />
+
+          <input
+            class="brand_radio"
+            type="radio"
+            id="himalaya"
+            name="company"
+            value="himalaya"
+          />
+          <label
+            class="label_radio"
+            for="himalaya"
+            >&nbsp;Himalaya</label
+          ><br />
+        </div>
+        <div class="rating">
+          <h3 style="text-align: center; margin-bottom: 9px">Rating</h3>
+
+          <input
+            class="rating_radio"
+            type="radio"
+            id="above_2"
+            name="rat"
+            value="above_2"
+          />
+          <label
+            class="l_radio"
+            for="above_2"
+            >&nbsp;✮✮</label
+          ><br />
+
+          <input
+            class="rating_radio"
+            type="radio"
+            id="above_3"
+            name="rat"
+            value="above_3"
+          />
+          <label
+            class="l_radio"
+            for="above_3"
+            >&nbsp;✮✮✮</label
+          ><br />
+
+          <input
+            class="rating_radio"
+            type="radio"
+            id="above_4"
+            name="rat"
+            value="above_4"
+          />
+          <label
+            class="l_radio"
+            for="above_4"
+            >&nbsp;✮✮✮✮</label
+          ><br />
+        </div>
+      </div>
+      <div class="container" id="container"></div>
+    </section>
+  </body>
+  <script src="./product.js"></script>
+  <script src="https://kit.fontawesome.com/b8129bed2b.js" crossorigin="anonymous"></script>
 </html>
