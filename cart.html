@@ -1,14 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart Page</title>
-    <link rel="stylesheet" href="/Style/cart.css">
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Style/cart.css" />
+    <script
+      src="https://kit.fontawesome.com/a0feeaba88.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" type="text/css" href="footer.css" /> -->
+    <title>Your Cart | SkinStore</title>
+  </head>
+  <body>
+    <div id="nav-container"></div>
+    <div class="mainContent">
+      <div class="cartPageHeader">
+        <h1>Your Cart</h1>
+        <button id="topCheckoutButton">
+          <span><i class="fa-solid fa-lock" style="color: #fff"></i></span>
+          <span> CHECKOUT SECURELY NOW </span>
+        </button>
+      </div>
+
+      
+      <div class="cartPageContentWrapper">
+        <div class="itemsAndGiftsDiv">
+          <div class="cartItemShowCaseWrapper" id="cartItemShowCaseWrapper">
+            <div class="cartItemHeader">
+              <div id="itemDiv">
+                <p>Items</p>
+              </div>
+              <div id="priceDiv">Price</div>
+              <div id="quantityDiv">Quantity</div>
+              <div id="subtotalDiv">Subtotal</div>
+            </div>
+          </div>
+          <div class="cartSummery">
+            <div class="cartSummerySectionHeader">
+              <h3>Order Summary</h3>
+            </div>
+            <div class="pricingElements">
+              <div id="pricingElementDetails">
+                <p id="pricingFinalSubtotal">Subtotal (1 Items)</p>
+                <p>Shipping Cost</p>
+                <p>Discount</p>
+                <p>Tax (Calculated at checkout)</p>
+              </div>
+              <div id="pricingElementPrices">
+                <p id="cartSummerySubtotal">$230.00</p>
+                <p>*TBD</p>
+                <p id="discountPrice">- $0.00</p>
+                <p>$0.00</p>
+              </div>
+            </div>
+            <div class="appliedCouponManagement">
+              <div id="showCoupon">
+                <p>high30</p>
+                <i class="fa-solid fa-square-xmark" style="color: #fff"></i>
+              </div>
+            </div>
+            <div class="applyDiscountWrapper">
+              <input type="text" placeholder="Promo Code" />
+              <button>Apply</button>
+            </div>
+            <div class="couponAlerts">
+              <p id="couponAlertText">Alert</p>
+            </div>
+            <div class="cartTotalFinalWrapper">
+              <p>Total</p>
+              <p id="totalCartPrice">$200.00</p>
+            </div>
+            <div class="checkoutButtonWrapper">
+              <button id="bottomCheckoutButton">Checkout SECURELY now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- <div id="footer"></div> add footer here..... -->
+  </body>
+  <script src="./Script/cart.js"></script>
 </html>
-<script src="/Script/cart.js"></script>
