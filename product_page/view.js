@@ -5,6 +5,7 @@ let price = document.getElementById("amount");
 let description = document.getElementById("description");
 let ingredients = document.getElementById("Ingredients");
 let extra_products = document.getElementById("extra_products");
+let ad_cart = document.getElementById("ad_cart");
 var counter = 0;
 
 //descrip
@@ -74,17 +75,17 @@ async function fetchData(id = 1) {
   }
 }
 
-let one = Math.floor(Math.random() * 14) + 1;
+let one = Math.floor(Math.random() * 30) + 1;
 fetchData(one);
-let two = Math.floor(Math.random() * 14) + 1;
+let two = Math.floor(Math.random() * 30) + 1;
 fetchData(two);
-let three = Math.floor(Math.random() * 14) + 1;
+let three = Math.floor(Math.random() * 30) + 1;
 fetchData(three);
 
 function displayData(element) {
   // extra_products.innerHTML = "";
   let main_div = document.createElement("div");
-  main_div.className = "main_div"
+  main_div.className = "main_div";
 
   let main_card = document.createElement("div");
   main_card.className = "main-card";
@@ -137,6 +138,10 @@ function displayData(element) {
   let btn_cart = document.createElement("button");
   btn_cart.className = "cart";
 
+  btn_cart.addEventListener("click", () => {
+    check_cart(element);
+  });
+
   let fo_i = document.createElement("i");
   fo_i.classList.add("fa-solid", "fa-cart-shopping");
   fo_i.id = "cart-anima";
@@ -158,3 +163,39 @@ function displayData(element) {
   main_div.append(img_card, body_card);
   extra_products.append(main_div);
 }
+
+async function check_cart(element) {
+  try {
+    let res = await fetch(`https://mock-server-unit-005.onrender.com/Cart`);
+    let data = await res.json();
+    let flag = true;
+
+    for (let item of data) {
+      if (item.id == element.id) {
+        flag = false;
+        break;
+      }
+    }
+
+    if (flag) {
+      console.log("hello");
+      let res_add = await fetch(
+        `https://mock-server-unit-005.onrender.com/Cart`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(element),
+        }
+      );
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+ad_cart.addEventListener("click", () => {
+  let data = JSON.parse(localStorage.getItem("view"));
+  check_cart(data);
+});

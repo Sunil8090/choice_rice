@@ -17,7 +17,18 @@
   </head>
   <body>
     <div class="container">
-      <div class="display">View</div>
+      <div class="display">
+        <a style="margin-left: 10px;" href="../unit5project/homepage.html"
+          ><i
+            class="fa-solid fa-house"
+            style="color: #ffffff"
+          ></i
+        ></a>
+        <span>View</span>
+        <a href="../cart.html" style="margin-right: 10px;">
+          <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+        </a>
+      </div>
       <div id="image_wrapper">
         <div id="show_img"></div>
         <div class="nav">
@@ -37,10 +48,10 @@
       </div>
       <div class="details">
         <div id="top">
-          <h2 id="prod_name">hahhahha hhahhahhaha</h2>
+          <h2 id="prod_name"></h2>
           <h4 id="price">
             <i class="fa-solid fa-tag fa-rotate-90"></i> ₹
-            <span id="amount">120</span>
+            <span id="amount">000</span>
           </h4>
           <button id="ad_cart">Add to cart</button>
         </div>
@@ -97,11 +108,13 @@
           <p style="font-size: 10px">recycled & recyclable</p>
         </div>
       </div>
-      <h2 style="text-decoration: underline; margin: 20px 0px; width: 100%;">Related products</h2>
-      <div id="extra_products">
-        
-      </div>
-      <h2 style="text-decoration: underline; margin: 20px 0px; width: 100%;">Reviews</h2>
+      <h2 style="text-decoration: underline; margin: 20px 0px; width: 100%">
+        Related products
+      </h2>
+      <div id="extra_products"></div>
+      <h2 style="text-decoration: underline; margin: 20px 0px; width: 100%">
+        Reviews
+      </h2>
       <div class="reviews">
         <div id="review">
           <h3>Nnai ✮✮✮✮</h3>
@@ -123,15 +136,17 @@
         </div>
         <div id="give_review">
           <h2>Write your review here</h2>
-          <br>
-          <textarea  id="review_box" cols="40" rows="6"></textarea>
-          <br>
+          <br />
+          <textarea
+            id="review_box"
+            cols="40"
+            rows="6"
+          ></textarea>
+          <br />
           <button id="send_feedback">Send</button>
         </div>
       </div>
     </div>
-
-    
   </body>
   <script src="./view.js"></script>
   <script

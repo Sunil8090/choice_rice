@@ -25,6 +25,8 @@ body {
 }
 
 .display {
+  display: flex;
+  justify-content: space-between;
   width: 98%;
   font-size: 20px;
   background-color: black;
