@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&display=swap");
+    </style>
+    <link
+      rel="stylesheet"
+      href="./view.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="display">View</div>
+      <div id="image_wrapper">
+        <div id="show_img"></div>
+        <div class="nav">
+          <button
+            class="right"
+            onclick="goPre()"
+          >
+            prev
+          </button>
+          <button
+            class="right"
+            onclick="goNext()"
+          >
+            next
+          </button>
+        </div>
+      </div>
+      <div class="details">
+        <div id="top">
+          <h2 id="prod_name">hahhahha hhahhahhaha</h2>
+          <h4 id="price">
+            <i class="fa-solid fa-tag fa-rotate-90"></i> ₹
+            <span id="amount">120</span>
+          </h4>
+          <button id="ad_cart">Add to cart</button>
+        </div>
+        <br />
+        <br />
+        <hr style="height: 4px; background-color: black" />
+        <div id="bottom">
+          <div>
+            <h4 style="text-decoration: underline; margin: 10px 0">
+              description
+            </h4>
+            <p id="description"></p>
+          </div>
+          <div>
+            <div
+              class="dropdown"
+              onclick="toggleDropdown(this)"
+            >
+              <div class="dropdown-toggle">Ingredients</div>
+              <div class="dropdown-content">
+                <p id="Ingredients"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="features">
+        <div class="features_border">
+          <i class="fa-brands fa-pagelines"></i>
+          <p style="font-size: 10px">Aloe vera moisturizer</p>
+        </div>
+        <div class="features_border">
+          <i class="fa-brands fa-nutritionix"></i>
+          <p style="font-size: 10px">Fresh Scents</p>
+        </div>
+        <div class="features_border">
+          <i class="fa-solid fa-leaf"></i>
+          <p style="font-size: 10px">Natural origin</p>
+        </div>
+        <div class="features_border">
+          <i class="fa-solid fa-hands-bubbles"></i>
+          <p style="font-size: 10px">400+ Sprays</p>
+        </div>
+        <div class="features_border">
+          <i class="fa-solid fa-virus"></i>
+          <p style="font-size: 10px">Kills 99% of virus</p>
+        </div>
+        <div class="features_border">
+          <i class="fa-solid fa-globe"></i>
+          <p style="font-size: 10px">Travel friendly</p>
+        </div>
+        <div class="features_border">
+          <i class="fa-solid fa-recycle"></i>
+          <p style="font-size: 10px">recycled & recyclable</p>
+        </div>
+      </div>
+      <h2 style="text-decoration: underline; margin: 20px 0px; width: 100%;">Related products</h2>
+      <div id="extra_products">
+        
+      </div>
+      <h2 style="text-decoration: underline; margin: 20px 0px; width: 100%;">Reviews</h2>
+      <div class="reviews">
+        <div id="review">
+          <h3>Nnai ✮✮✮✮</h3>
+          <p>
+            This hand sanitizer is my go-to for keeping my hands clean on the
+            go. It dries quickly and doesn't leave any sticky residue. Highly
+            recommended!
+          </p>
+          <h3>Anna ✮✮✮✮✮</h3>
+          <p>
+            I love how this sanitizer doesn't dry out my hands like some others
+            do. The refreshing scent is a bonus!
+          </p>
+          <h3>Sam ✮✮✮✮</h3>
+          <p>
+            Great product! It's compact and easy to carry in my bag. Perfect for
+            maintaining hygiene while traveling.
+          </p>
+        </div>
+        <div id="give_review">
+          <h2>Write your review here</h2>
+          <br>
+          <textarea  id="review_box" cols="40" rows="6"></textarea>
+          <br>
+          <button id="send_feedback">Send</button>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+  <script src="./view.js"></script>
+  <script
+    src="https://kit.fontawesome.com/b8129bed2b.js"
+    crossorigin="anonymous"
+  ></script>
+</html>

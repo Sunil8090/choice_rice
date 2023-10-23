@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Playpen Sans", cursive;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    63deg,
+    rgba(0, 0, 0, 0.09576330532212884) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 1000px;
+  /* background-color: aqua; */
+}
+
+.display {
+  width: 98%;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  margin: 8px;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* #image_wrapper {
+  width: 400px;
+  overflow: hidden;
+} */
+
+#show_img {
+  width: 400px;
+  height: 500px;
+  margin-left: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 10px;
+}
+
+#show_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  position: absolute;
+}
+
+.nav {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.nav button {
+  font-size: 25px;
+  padding: 5px;
+}
+
+.right {
+  background-color: black;
+  color: white;
+  width: 80px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* details */
+.details {
+  width: 550px;
+}
+
+#prod_name {
+  font-size: 1.4rem;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+}
+
+#price {
+  font-size: 2rem;
+}
+
+#ad_cart {
+  float: right;
+}
+
+#ad_cart {
+  padding: 8px 15px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+/* dropdown */
+.dropdown {
+  width: 350px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  transition: height 0.3s;
+  margin-top: 10px;
+  height: 40px;
+  overflow: hidden;
+}
+.dropdown-content {
+  padding: 10px;
+}
+.dropdown-toggle::after {
+  content: "+";
+  float: right;
+}
+.dropdown.open {
+  height: auto;
+}
+.dropdown.open .dropdown-toggle::after {
+  content: "-";
+}
+
+.dropdown {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: black;
+}
+
+.dropdown-toggle {
+  color: white;
+}
+
+.btn_ing {
+  background-color: white;
+  padding: 5px;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  margin: 4px;
+}
+
+/* features */
+#features {
+  border-top: 1px solid black;
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin: 20px;
+  padding: 0 100px;
+  opacity: 0.6;
+}
+
+.features_border {
+  display: inline-block;
+  font-size: 40px;
+  padding: 0 20px;
+  max-width: 100px;
+  margin: auto;
+  text-align: center;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+/* review */
+.reviews {
+  display: flex;
+  margin-bottom: 80px;
+}
+#review {
+  max-width: 500px;
+  border-right: 1px solid black;
+}
+
+#send_feedback {
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+}
+#review_box {
+  border: 2px solid gray;
+}
+
+#give_review {
+  margin: 10px;
+}
+
+/* extra products */
+#extra_products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main_div {
+  flex-grow: 1;
+  flex-basis: 250px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 8px 0;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  justify-content: space-between;
+  border-radius: 20px;
+  animation: pop 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* height: auto; */
+}
+
+.img-card {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.body_card {
+  padding: 20px;
+  text-align: center;
+}
+
+.body_card h3 {
+  font-size: 14px;
+}
+
+.product_name {
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #4caf50;
+  font-weight: 700;
+}
+
+.dispay_product {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.cart {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+/* footer */
+
