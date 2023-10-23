@@ -15,14 +15,14 @@ for (let i = 0; i < productLinks.length; i++) {
 const personIcons = document.querySelectorAll(".bi-person-fill");
 personIcons.forEach(function (icon) {
   icon.addEventListener("click", function () {
-    window.location.href = "../login_signup.html"; // Navigate to the "cat.html" page
+    window.location.href = "../index.html"; // Navigate to the "cat.html" page
   });
 });
 
 const bagIcons = document.querySelectorAll(".bi-bag");
 bagIcons.forEach(function (icon) {
   icon.addEventListener("click", function () {
-    window.location.href = "../cart.html"; // Navigate to the "cart.html" page
+    window.location.href = "../cart/cart.html"; // Navigate to the "cart.html" page
   });
 });
 window.addEventListener("load", function () {

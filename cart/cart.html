@@ -6,119 +6,202 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="./Style/cart.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/a0feeaba88.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- <link rel="stylesheet" type="text/css" href="footer.css" /> -->
-    <title>Your Cart</title>
+    <title>Document</title>
   </head>
+  <link
+    rel="stylesheet"
+    href="./cart.css"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&family=Genos:wght@300&family=Kanit:wght@300&family=Maven+Pro&family=REM:wght@900&family=Roboto:wght@100;300;400&family=Ubuntu&display=swap"
+    rel="stylesheet"
+  />
   <body>
-    <div class="mainContent">
-      <div id="nav-container">
-        <a
-          href="./product_page/product.html"
-          style="margin: 7px 20px"
-          ><i
-            class="fa-solid fa-pump-soap"
-            style="color: #ffffff"
-          ></i
-        ></a>
-        <span style="color: white">Cart</span>
-        <a
-          href="./unit5project/homepage.html"
-          style="margin: 7px 20px"
-          ><i
-            class="fa-solid fa-house"
-            style="color: #ffffff"
-          ></i
-        ></a>
-      </div>
-      <div class="cartPageHeader">
-        <h1>Your Cart</h1>
-        <button id="topCheckoutButton">
-          <span
-            ><i
-              class="fa-solid fa-lock"
-              style="color: #fff"
-            ></i
-          ></span>
-          <span> CHECKOUT SECURELY NOW </span>
-        </button>
-      </div>
+    <div id="navbar">
+      <a
+        href="../product_page/product.html"
+        style="margin: 7px 20px"
+        ><i
+          class="fa-solid fa-pump-soap"
+          style="color: #ffffff"
+        ></i
+      ></a>
+      <span style="color: white">Cart</span>
+      <a
+        href="../unit5project/homepage.html"
+        style="margin: 7px 20px"
+        ><i
+          class="fa-solid fa-house"
+          style="color: #ffffff"
+        ></i
+      ></a>
+    </div>
+    <div id="container">
+      <div id="items"></div>
+      <div id="details">
+        <h1 style="margin: 10px">Order Summary</h1>
+        <hr
+          size="1.5"
+          color="black"
+          width="85%"
+          style="margin: 0 auto"
+        />
+        <div
+          class="order-summary"
+          style="position: relative"
+        >
+          <h5>
+            No of Products
+            <span
+              style="float: right"
+              id="totalItem"
+              >10</span
+            >
+          </h5>
+          <h5>
+            Total Amount<span
+              style="float: right"
+              id="toatlAmount"
+              class="rupee"
+              >1000</span
+            >
+          </h5>
+          <h5 style="color: red">
+            Discount<span
+              style="float: right"
+              id="discount-val"
+              class="rupee"
+              >0</span
+            >
+          </h5>
 
-      <div class="cartPageContentWrapper">
-        <div class="itemsAndGiftsDiv">
-          <div
-            class="cartItemShowCaseWrapper"
-            id="cartItemShowCaseWrapper"
+          <h5>
+            Shipping<span
+              class="rupee"
+              id="rupee_ship"
+              style="float: right"
+              >0</span
+            >
+          </h5>
+
+          <img
+            style="
+              width: 300px;
+              position: absolute;
+              left: 15%;
+              bottom: 10%;
+              transform: rotate(-35deg);
+            "
+            src="./old_style.png"
+            alt=""
+          />
+
+          <hr
+            size="1.5"
+            color="black"
+            width="90%"
+            style="margin: 0 auto"
+          />
+
+          <h4 style="color: #ff8400">
+            Order total
+            <span
+              style="float: right"
+              id="payable"
+              class="rupee"
+              >0</span
+            >
+          </h4>
+          <hr
+            size="1.5"
+            color="black"
+            width="90%"
+            style="margin: 0 auto"
+          />
+
+          <h4 style="margin-bottom: 0">Apply a promo code</h4>
+          <p style="font-size: 13px; margin: 4px 25px; opacity: 0.7">
+            Remove any dashes or spaces before applying
+          </p>
+          <input
+            id="coupon"
+            style="
+              margin: 4px 23px;
+              width: 300px;
+              padding: 10px;
+              border: 1px solid black;
+            "
+            type="text"
+          />
+          <button
+            id="apply"
+            style="
+              margin: 4px 23px;
+              padding: 10px 20px;
+              background-color: white;
+              font-weight: 600;
+              color: rgb(23, 21, 21);
+              border: 1px solid black;
+            "
           >
-            <div class="cartItemHeader">
-              <div id="itemDiv">
-                <p>Items</p>
-              </div>
-              <div id="priceDiv">Price</div>
-              <div id="quantityDiv">Quantity</div>
-              <div id="subtotalDiv">Subtotal</div>
-            </div>
-          </div>
-          <div class="cartSummery">
-            <div class="cartSummerySectionHeader">
-              <h3>Order Summary</h3>
-            </div>
-            <div class="pricingElements">
-              <div id="pricingElementDetails">
-                <p id="pricingFinalSubtotal">Subtotal (1 Items)</p>
-                <p>Shipping Cost</p>
-                <p>Discount</p>
-                <p>Tax (Calculated at checkout)</p>
-              </div>
-              <div id="pricingElementPrices">
-                <p id="cartSummerySubtotal">$230.00</p>
-                <p>*TBD</p>
-                <p id="discountPrice">- $0.00</p>
-                <p>$0.00</p>
-              </div>
-            </div>
-            <div class="appliedCouponManagement">
-              <div id="showCoupon">
-                <p>high30</p>
-                <i
-                  class="fa-solid fa-square-xmark"
-                  style="color: #fff"
-                ></i>
-              </div>
-            </div>
-            <div class="applyDiscountWrapper">
-              <input
-                type="text"
-                placeholder="Promo Code"
-              />
-              <button>Apply</button>
-            </div>
-            <div class="couponAlerts">
-              <p id="couponAlertText">Alert</p>
-            </div>
-            <div class="cartTotalFinalWrapper">
-              <p>Total</p>
-              <p id="totalCartPrice">$200.00</p>
-            </div>
-            <div class="checkoutButtonWrapper">
-              <button id="bottomCheckoutButton">Checkout SECURELY now</button>
-            </div>
-          </div>
+            APPLY
+          </button>
         </div>
+        <!-- <h3 style="display: inline-block; margin: 18px 40px">
+          Your addresses <br />
+          <p
+            id="head_pin"
+            style="
+              font-size: 14px;
+              padding: 10px 0;
+              color: #ff8400;
+              display: none;
+            "
+          ></p>
+        </h3> -->
+        <div class="content">
+          <!-- Button to open the address popup -->
+          <!-- <button id="openPopup">EDIT ADDRESS</button> -->
+        </div>
+        <br />
+        <hr
+          size="1.5"
+          color="black"
+          width="90%"
+          style="margin: 0 auto"
+        />
+        <button
+          class="check"
+          id="payButton"
+        >
+          CHECKOUT NOW
+        </button>
+
+        <p style="margin: 10px 30px; font-size: 12px">
+          By clicking 'Proceed to Payment,' you agree to our
+          <a
+            href="#"
+            style="color: #ff8400; text-decoration: none"
+            >terms</a
+          >
+          and
+          <a
+            href="#"
+            style="color: #ff8400; text-decoration: none"
+            >Conditions</a
+          >.
+        </p>
       </div>
     </div>
-    <!-- <div id="footer"></div> add footer here..... -->
     <div class="foot">
       <div id="NASbottom">
         <div id="NASupper-bottom">
@@ -889,5 +972,12 @@
       </div>
     </div>
   </body>
-  <script src="./Script/cart.js"></script>
+  <script src="./cart.js"></script>
+  <script
+    src="https://kit.fontawesome.com/b8129bed2b.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="./script.js"></script>
 </html>

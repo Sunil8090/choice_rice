@@ -69,7 +69,7 @@
     width: 1459px;
     height: 400px;
     
-    margin-left: 200px;
+    margin-left: 55px;
     flex-wrap: wrap;
 }
 .newSellers{
@@ -79,14 +79,14 @@
     width: 1459px;
     height: 380px;
     
-    margin-left: 200px;
+    margin-left: 55px;
     flex-wrap: wrap;
 
 }
 
 .image-container {
 display: flex;
-overflow:hidden;
+/* overflow:hidden; */
 }
 
 .image-container img {
