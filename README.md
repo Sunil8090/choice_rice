@@ -2,38 +2,69 @@
 Sanitizer Products Website
 This is the official website for [Your School Name] where we showcase and provide information about our range of sanitizer products. Our aim is to promote hygiene and health within the school community and beyond.
 
-Features
-Product Catalog: View our range of sanitizer products, including detailed descriptions and images.
-Secure Ordering: Easily place orders for sanitizer products through our website's secure payment gateway.
-Informational Resources: Access articles and resources on the importance of hygiene and proper use of sanitizers.
-Contact Information: Get in touch with us for any inquiries or concerns through the provided contact details.
-Technologies Used
-HTML5
-CSS3
-JavaScript
-Bootstrap
-[Add any other relevant technologies]
-Setup
-Clone this repository to your local machine.
-Open the project in your preferred code editor.
-Customize the content in the HTML files to fit your specific product offerings.
-Customize the CSS files to match your school's branding and design guidelines.
-Host the website on a server to make it accessible to the public.
-Usage
-To use the website, simply visit [insert your website URL here] and navigate through the different pages to learn about our sanitizer products, place orders, and access useful hygiene-related resources.
+Sure, here is a sample README file for your sanitizer products website:
 
-Contributing
-We welcome contributions to improve the website and its content. Please follow the standard GitHub workflow for pull requests.
+# Sanitizer Products Website
 
-Fork the repository.
-Create your feature branch: git checkout -b feature/YourFeature
-Commit your changes: git commit -m 'Add some feature'
-Push to the branch: git push origin feature/YourFeature
-Open a pull request.
-License
-This project is licensed under the [Your License] - see the LICENSE file for details.
+This is the official website for the sanitizer products created as a school project by our team of four members.
 
-Contact
-For any questions or feedback, please reach out to us at [Insert Contact Information].
+## Team Members
 
-Feel free to customize this template according to your specific project details. Ensure you update the sections with relevant information about your sanitizer products website.
+- Member 1: Sunil kumar
+- Member 2: Vishwanadh
+- Member 3: Ashwek
+- Member 4: Yogesh
+
+## Pages
+
+1. Login/Signup Page: This page allows users to create an account or log in to their existing accounts.
+2. ![image](https://github.com/Sunil8090/choice_rice/assets/89017179/2aeb39ad-7015-4f40-a29f-1052d48e9fa8)
+
+3. Homepage: The landing page that introduces the website and showcases featured sanitizer products.
+4. ![image](https://github.com/Sunil8090/choice_rice/assets/89017179/c2c1d374-9bb6-43c9-8ab9-ae8a076dac9c)
+
+5. View Page: This page displays detailed information about a specific sanitizer product.
+6. ![image](https://github.com/Sunil8090/choice_rice/assets/89017179/9283b5b1-1e37-4936-8029-764dc1fa09d2)
+
+7. Product Page: Displays the entire range of sanitizer products with filters and added debouncing for a better user experience.
+8. ![image](https://github.com/Sunil8090/choice_rice/assets/89017179/70cd3cfd-03a3-4244-8476-3ec1374b0b31)
+
+9. Cart Page: Shows the selected products and allows users to proceed to checkout.
+10. ![image](https://github.com/Sunil8090/choice_rice/assets/89017179/656d5e4c-bb56-47d5-8f06-e00513a8cf79)
+
+
+## Features
+
+- User Authentication: Allows users to sign up and log in to the website.
+- Dynamic Product Filters: Users can filter products based on different criteria for a more customized search experience.
+- Responsive Design: The website is designed to be accessible and user-friendly across various devices.
+- Debouncing: Implemented to enhance the search functionality and reduce unnecessary API calls.
+- Secure Backend: Utilize the backend link provided for data management and user interactions.
+
+## Frontend Link
+
+[Sanitizer Products Website - Frontend](https://653694e7d175843431d652d8--jocular-manatee-1fe350.netlify.app/unit5project/homepage)
+
+## Backend Link
+
+[Sanitizer Products Website - Backend](https://mock-server-unit-005.onrender.com)
+
+## Setup
+
+1. Clone the repository to your local machine.
+2. Run `npm install` to install the necessary dependencies.
+3. Customize the code to suit your specific requirements and branding.
+4. Run the application locally using `npm start`.
+
+## Contributing
+
+We welcome contributions to improve the website's functionality and design. If you wish to contribute, please follow the standard GitHub workflow for pull requests.
+
+## License
+
+This project is licensed under the MIT 
+
+## Contact
+
+For any questions or feedback, please reach out to one of the team members:
+
