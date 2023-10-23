@@ -1,76 +1,152 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Log-in Design</title>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="index.js" charset="utf-8"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login-signup</title>
     <link rel="stylesheet" href="./Style/login.css">
 
-    <script src="./Script/login.js"></script>
 </head>
 
 <body>
     <video autoplay loop muted id="video-background">
         <source src="./video/production_id_4873240 (1080p).mp4" type="video/mp4">
     </video>
-    <section class="wrapper">
-        <div class="login-section">
-            <span class="circle"></span>
-            <!-- <span class="rectangle"></span>
-            <span class="rectangle"></span>
-            <span class="rectangle"></span> -->
-
-            <form class="login-form">
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
-
-                <!-- Add any additional input fields you need -->
-
-                <!-- <button type="submit">Login</button> -->
+    <div class="container">
+        <div class="front_card">
+            <form class="login_form" action="javascript:void(0);">
+                <input type="email" class="login_email" placeholder="Email" autofocus />
+                <input type="password" class="login_password" placeholder="Password">
+                <button class="login_btn">LogIn</button>
             </form>
-            <p>Forgot Password</p>
-
-            <div class="main-text">
-                <h2 class="phrase" id="login">LOG IN</h2>
+            <form class="signup_form" action="javascript:void(0);">
+                <input type="text" class="user_full_name" placeholder="Full Name">
+                <input type="email" class="user_email" placeholder="Email" />
+                <input type="password" class="user_password" placeholder="Password">
+                <button class="signup_btn">SignUp</button>
+            </form>
+        </div>
+        <div class="back_card">
+            <div class="login_msg">
+                <h2>Have account?</h2>
+                <button class="login_msg_btn">LogIn</button>
             </div>
-            <div class="social-icons">
-                <span class="circle"></span>
-                <span class="circle"></span>
-                <span class="circle"></span>
+            <div class="signup_msg">
+                <h2>Do not have account?</h2>
+                <button class="signup_msg_btn">SignUp</button>
             </div>
         </div>
-
-        <div class="signup-section">
-            <span class="circle"></span>
-            <!-- <span class="rectangle"></span>
-            <span class="rectangle"></span>
-            <span class="rectangle"></span> -->
-            <form class="signup-form">
-                <input type="text" id="name" name="name" placeholder="Enter your Name" required>
-
-                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
-
-                <input type="password" id="Password" name="Password" placeholder="Enter your Password" required>
-
-                <!-- Add any additional input fields you need -->
-
-                <!-- <button type="submit">Sign Up</button> -->
-            </form>
-            <p>Forgot Password</p>
-
-            <div class="main-text">
-                <h2 class="phrase" id="signup">SIGN UP</h2>
-            </div>
-            <div class="social-icons">
-                <span class="circle"></span>
-                <span class="circle"></span>
-                <span class="circle"></span>
-            </div>
+    </div>
+    <div id="myModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" style="cursor: pointer;">&times;</span>
+            <h3 id="modal-title">Sign-In Status</h3>
+            <p id="modal-message"></p>
         </div>
-    </section>
+    </div>
 </body>
+<script src="./Script/login.js"></script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyA1qziNc2z96uJLQRylKp_Fo8ONJZu8YHQ",
+        authDomain: "authentication-app-a3e93.firebaseapp.com",
+        projectId: "authentication-app-a3e93",
+        storageBucket: "authentication-app-a3e93.appspot.com",
+        messagingSenderId: "78446663320",
+        appId: "1:78446663320:web:6b993671e828dc76b5e2ed"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const modal = document.getElementById('myModal');
+    const closeButton = document.querySelector('.close');
+    const modalTitle = document.getElementById('modal-title');
+    const modalMessage = document.getElementById('modal-message');
+
+    const openModal = (title, message) => {
+        modalTitle.textContent = title;
+        modalMessage.textContent = message;
+        modal.style.display = 'block';
+    }
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+    }
+    closeButton.addEventListener('click', closeModal);
+
+
+
+    const userEmail = document.querySelector('.user_email');
+    const userPassword = document.querySelector('.user_password');
+    const signupButton = document.querySelector(".signup_btn");
+
+    const userLoginEmail = document.querySelector('.login_email');
+    const userLoginPassword = document.querySelector('.login_password');
+    const userLoginButton = document.querySelector(".login_btn");
+
+
+    const userSignUp = async () => {
+        const signUpEmail = userEmail.value;
+        const signUpPassword = userPassword.value;
+        createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                // console.log(user);
+                // alert('Your account has been created!!');
+                openModal('Sign-Up Successful', 'Your account has been created successfully.');
+
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                openModal('Sign-Up Error', `Firebase Error (${errorCode}): ${errorMessage}`);
+                console.error(`Firebase Error (${errorCode}): ${errorMessage}`);
+
+            })
+    }
+    const userLogin = async () => {
+        const loginEmail = userLoginEmail.value;
+        const loginPassword = userLoginPassword.value;
+        signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                // alert('Signed in successfully!!');
+                openModal('Sign-In Successful', 'Redirecting...');
+                setTimeout(() => {
+                    // After a delay, redirect to index.html
+                    window.location.href = 'index.html';
+                }, 2000);
+                // window.location.href = 'index.html';
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                openModal('Sign-In Error', `Firebase Error (${errorCode}): ${errorMessage}`);
+                console.error(`Firebase Error (${errorCode}): ${errorMessage}`);
+
+            })
+    }
+
+    signupButton.addEventListener('click', userSignUp);
+    userLoginButton.addEventListener('click', userLogin);
+
+
+</script>
 
 </html>
